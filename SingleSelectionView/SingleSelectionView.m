@@ -21,6 +21,7 @@
     }
     return self;
 }
+
 - (id)init
 {
     self = [self initWithFrame:CGRectZero];
@@ -30,16 +31,19 @@
     }
     return self;
 }
+
 - (void)initSize
 {
     CGRect rect = self.frame;
     rect.size   = Size;
     self.frame  = rect;
 }
+
 - (void)initTarget
 {
     [self addTarget:self action:@selector(singleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
+
 - (void)singleButtonClicked:(UIButton *)button
 {
     button.selected = !button.selected;
@@ -47,6 +51,7 @@
         [_target performSelector:_action withObject:self];
     }
 }
+
 - (void)setSelected:(BOOL)selected
 {
     if (selected) {
@@ -60,11 +65,13 @@
     }
     [super setSelected:selected];
 }
+
 - (void)initializeView
 {
     self.adjustsImageWhenHighlighted = NO;
     self.selected = NO;
 }
+
 - (void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents
 {
     if (target == self) {

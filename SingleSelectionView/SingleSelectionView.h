@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+
+//---------------------------------------
+// The same use as UIButton
+//---------------------------------------
 @interface SingleSelectionView : UIButton
 {
     @package
     id      _target;
     SEL     _action;
 }
+
 @end
